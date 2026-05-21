@@ -14,6 +14,11 @@
   <nav class="nav">
     <div class="nav-inner">
       <div class="nav-logo">ProspectAI</div>
+      <div class="nav-links">
+        <a href="#demo" class="nav-link">See Demo</a>
+        <a href="#how" class="nav-link">How It Works</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+      </div>
       <a href="#contact" class="nav-cta">Get Started</a>
     </div>
   </nav>
@@ -28,7 +33,7 @@
       <p class="hero-sub">ProspectAI responds to every new prospect in under 60 seconds — 24/7 — books the meeting, and follows up automatically until they convert.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Get Your Free Demo</a>
-        <a href="#how" class="btn-ghost">See how it works ↓</a>
+        <a href="#demo" class="btn-ghost">See it in action ↓</a>
       </div>
       <p class="hero-note">No tech skills needed &nbsp;·&nbsp; Live in under a week</p>
     </div>
@@ -90,6 +95,149 @@
     </div>
   </section>
 
+  <!-- LIVE DEMO SECTION -->
+  <section class="demo-section" id="demo">
+    <div class="section-container">
+      <p class="demo-eyebrow">Live Demo</p>
+      <h2 class="demo-h2">See exactly what happens<br>after a lead submits.</h2>
+      <p class="section-sub section-sub-dark">A prospect fills your form at 2am. 58 seconds later, here's what they experience.</p>
+
+      <div class="demo-wrap">
+        <div class="demo-tabs-row">
+          <button class="dtab dtab-active" onclick="demoTab(this,'email')">📧 Email Response</button>
+          <button class="dtab" onclick="demoTab(this,'calendar')">📅 Calendly Booking</button>
+          <button class="dtab" onclick="demoTab(this,'crm')">📊 CRM Log</button>
+        </div>
+
+        <!-- EMAIL PANEL -->
+        <div class="dpanel" id="dpanel-email">
+          <div class="browser-chrome">
+            <div class="bc-bar">
+              <div class="bc-dots">
+                <span class="bcdot" style="background:#ff5f57"></span>
+                <span class="bcdot" style="background:#febc2e"></span>
+                <span class="bcdot" style="background:#28c840"></span>
+              </div>
+              <span class="bc-title">Gmail — Sarah Mitchell's Inbox</span>
+              <span class="bc-badge">⚡ 58 seconds after form</span>
+            </div>
+            <div class="em-body">
+              <div class="em-header-row">
+                <div class="em-avatar">G</div>
+                <div class="em-header-text">
+                  <div class="em-from">Gavin Vizzini <span class="em-addr">&lt;ProspectAISupport@gmail.com&gt;</span></div>
+                  <div class="em-to">to: sarah.mitchell@capitalgroup.com</div>
+                </div>
+              </div>
+              <div class="em-subject">Hi Sarah — a quick note about your lead conversion goals</div>
+              <div class="em-content">
+                <p>Hi Sarah,</p>
+                <p>Thanks for reaching out — I saw you're looking for a smarter way to follow up with leads without spending your whole day on it. That's exactly what ProspectAI solves.</p>
+                <p>I'd love to do a quick 30-minute call and walk you through the system live. Grab whatever time works best for you:</p>
+                <div class="em-cta-mock">📅 Book Your Free Strategy Call →</div>
+                <p style="margin-top:20px">Talk soon,<br><strong>Gavin Vizzini</strong><br><span class="em-sig">ProspectAI · AI Lead Systems for Financial Advisors<br>ProspectAISupport@gmail.com</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CALENDAR PANEL -->
+        <div class="dpanel dpanel-hidden" id="dpanel-calendar">
+          <div class="browser-chrome">
+            <div class="bc-bar">
+              <div class="bc-dots">
+                <span class="bcdot" style="background:#ff5f57"></span>
+                <span class="bcdot" style="background:#febc2e"></span>
+                <span class="bcdot" style="background:#28c840"></span>
+              </div>
+              <span class="bc-title">Calendly · Book with Gavin Vizzini</span>
+              <span class="bc-badge">📅 Sarah clicked the link</span>
+            </div>
+            <div class="cal-mock-body">
+              <div class="cal-left-col">
+                <div class="cal-host-avatar">G</div>
+                <div class="cal-host-name">Gavin Vizzini</div>
+                <div class="cal-event-title">30 Min Strategy Call</div>
+                <div class="cal-event-meta">🕐 30 min &nbsp;·&nbsp; 📹 Zoom &nbsp;·&nbsp; 💰 Free</div>
+                <div class="cal-event-desc">Walk through your current lead process and see a live demo of ProspectAI.</div>
+              </div>
+              <div class="cal-right-col">
+                <div class="cal-month-label">May 2026 — Available Times</div>
+                <div class="cal-slots">
+                  <div class="cslot">9:00 AM</div>
+                  <div class="cslot">9:30 AM</div>
+                  <div class="cslot cslot-selected">10:00 AM — Confirmed ✓</div>
+                  <div class="cslot">11:00 AM</div>
+                  <div class="cslot">2:00 PM</div>
+                  <div class="cslot">3:30 PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CRM PANEL -->
+        <div class="dpanel dpanel-hidden" id="dpanel-crm">
+          <div class="browser-chrome">
+            <div class="bc-bar">
+              <div class="bc-dots">
+                <span class="bcdot" style="background:#ff5f57"></span>
+                <span class="bcdot" style="background:#febc2e"></span>
+                <span class="bcdot" style="background:#28c840"></span>
+              </div>
+              <span class="bc-title">ProspectAI CRM — Google Sheets</span>
+              <span class="bc-badge">📊 Auto-logged instantly</span>
+            </div>
+            <div class="crm-mock-body">
+              <table class="crm-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Firm</th>
+                    <th>Status</th>
+                    <th>Response</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="crm-highlight">
+                    <td><strong>Sarah Mitchell</strong></td>
+                    <td>sarah@capitalgroup.com</td>
+                    <td>Capital Group</td>
+                    <td><span class="cstatus cstatus-booked">📅 Meeting Booked</span></td>
+                    <td style="color:#34c759;font-weight:600">⚡ 58s</td>
+                  </tr>
+                  <tr>
+                    <td>Michael Torres</td>
+                    <td>m.torres@wealthco.com</td>
+                    <td>WealthCo Advisors</td>
+                    <td><span class="cstatus cstatus-sent">✉️ Email Sent</span></td>
+                    <td style="color:#34c759;font-weight:600">⚡ 42s</td>
+                  </tr>
+                  <tr>
+                    <td>Jennifer Park</td>
+                    <td>j.park@fidelity.com</td>
+                    <td>Fidelity</td>
+                    <td><span class="cstatus cstatus-new">🔵 New Lead</span></td>
+                    <td style="color:#34c759;font-weight:600">⚡ 61s</td>
+                  </tr>
+                  <tr>
+                    <td>Robert Chen</td>
+                    <td>r.chen@schwab.com</td>
+                    <td>Charles Schwab</td>
+                    <td><span class="cstatus cstatus-booked">📅 Meeting Booked</span></td>
+                    <td style="color:#34c759;font-weight:600">⚡ 37s</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURES TILE GRID -->
   <section class="features">
     <div class="section-container">
@@ -143,8 +291,49 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-container">
+      <h2>Common questions.</h2>
+      <p class="section-sub section-sub-dark">Everything you need to know before getting started.</p>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary class="faq-q">Do I need to know how to code or use any new software?</summary>
+          <div class="faq-a">Not at all. We build and install the entire system for you. Your only job is to show up to the meetings we book into your calendar.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">How long does setup take?</summary>
+          <div class="faq-a">Most advisors are live within 5–7 business days. We handle everything — setup, connecting your tools, testing the full workflow, and handing you a working system.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What happens if a prospect doesn't respond to the first email?</summary>
+          <div class="faq-a">The system automatically sends follow-up messages at strategic intervals — without you lifting a finger. You only get notified when a prospect responds or books a call.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Will the emails sound like me, or will they sound like a bot?</summary>
+          <div class="faq-a">Your voice, not a template. During onboarding we study how you write and calibrate the AI to match your tone. Prospects regularly think the email came directly from you.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">Is there a long-term contract?</summary>
+          <div class="faq-a">No contracts. Month-to-month, cancel anytime. The one-time setup fee covers building your custom system — after that it's a flat monthly fee for as long as you use it.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">What tools do I need to already have?</summary>
+          <div class="faq-a">Just Gmail and Calendly — tools most advisors already use. We handle everything else. No new software to learn or maintain.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PRICING -->
-  <section class="pricing">
+  <section class="pricing" id="pricing">
     <div class="section-container">
       <p class="pricing-eyebrow">Pricing</p>
       <h2>Simple, transparent pricing.</h2>
@@ -161,8 +350,8 @@
           <li><span class="chk">✓</span>Automated follow-up sequences</li>
           <li><span class="chk">✓</span>Calendar booking integration</li>
           <li><span class="chk">✓</span>Lead tracking dashboard</li>
-          <li><span class="chk">✓</span>Custom email voice & tone setup</li>
-          <li><span class="chk">✓</span>Ongoing monitoring & maintenance</li>
+          <li><span class="chk">✓</span>Custom email voice &amp; tone setup</li>
+          <li><span class="chk">✓</span>Ongoing monitoring &amp; maintenance</li>
           <li><span class="chk">✓</span>Monthly performance report</li>
         </ul>
         <a href="#contact" class="btn-primary btn-block">Start with a Free Demo</a>
@@ -211,10 +400,12 @@
     <div class="footer-inner">
       <p class="footer-logo">ProspectAI</p>
       <p class="footer-copy">© 2026 ProspectAI. All rights reserved. Built exclusively for financial advisors.</p>
+      <p class="footer-contact"><a href="mailto:ProspectAISupport@gmail.com">ProspectAISupport@gmail.com</a></p>
     </div>
   </footer>
 
   <script>
+    // Form submission
     document.getElementById('demo-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('submit-btn');
@@ -241,7 +432,6 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
-
         if (resp.ok) {
           result.style.display = 'block';
           result.style.background = 'rgba(52,199,89,0.12)';
@@ -249,9 +439,7 @@
           result.style.color = '#34c759';
           result.textContent = "✅ Got it! You'll hear from us within 5 minutes.";
           this.reset();
-        } else {
-          throw new Error('err');
-        }
+        } else { throw new Error('err'); }
       } catch(err) {
         result.style.display = 'block';
         result.style.background = 'rgba(255,59,48,0.12)';
@@ -259,10 +447,17 @@
         result.style.color = '#ff3b30';
         result.textContent = '❌ Something went wrong. Please try again.';
       }
-
       btn.textContent = 'Request My Free Demo →';
       btn.disabled = false;
     });
+
+    // Demo tab switcher
+    function demoTab(btn, panel) {
+      document.querySelectorAll('.dtab').forEach(t => t.classList.remove('dtab-active'));
+      document.querySelectorAll('.dpanel').forEach(p => p.classList.add('dpanel-hidden'));
+      btn.classList.add('dtab-active');
+      document.getElementById('dpanel-' + panel).classList.remove('dpanel-hidden');
+    }
   </script>
 
 </body>

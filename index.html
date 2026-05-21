@@ -154,19 +154,31 @@
     <div class="container">
       <h2>Book your free demo</h2>
       <p class="section-sub">We'll show you exactly how the system works and set it up live for your practice.</p>
-      <form class="contact-form" name="demo-request" netlify>
+      <form class="contact-form" id="demo-form">
         <div class="form-row">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" id="first_name" placeholder="First Name" required />
+          <input type="text" id="last_name" placeholder="Last Name" required />
         </div>
-        <input type="text" name="firm" placeholder="Firm / Practice Name" />
-        <select name="leads" required>
-          <option value="" disabled selected>How many new leads do you get per month?</option>
-          <option value="1-5">1–5 leads/month</option>
-          <option value="6-20">6–20 leads/month</option>
-          <option value="20+">20+ leads/month</option>
+        <div class="form-row">
+          <input type="email" id="email" placeholder="Work Email" required />
+          <input type="tel" id="phone" placeholder="Phone Number" />
+        </div>
+        <input type="text" id="firm" placeholder="Firm / Practice Name" required />
+        <select id="interest" required>
+          <option value="" disabled selected>What's your biggest challenge with leads?</option>
+          <option value="Slow follow-up — leads go cold before I respond">Slow follow-up — leads go cold</option>
+          <option value="Inconsistent follow-up — I forget to follow up">Inconsistent follow-up</option>
+          <option value="No system — everything is manual">No system — everything is manual</option>
+          <option value="Too busy to manage leads effectively">Too busy to manage leads</option>
         </select>
-        <button type="submit" class="btn btn-primary">Request My Free Demo &rarr;</button>
+        <select id="leads_per_month" required>
+          <option value="" disabled selected>How many new leads per month?</option>
+          <option value="1-5 leads per month">1–5 leads/month</option>
+          <option value="6-20 leads per month">6–20 leads/month</option>
+          <option value="20+ leads per month">20+ leads/month</option>
+        </select>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Request My Free Demo &rarr;</button>
+        <div id="form-result" style="display:none;margin-top:16px;padding:14px;border-radius:8px;font-size:0.95rem;"></div>
       </form>
     </div>
   </section>
@@ -178,5 +190,53 @@
     </div>
   </footer>
 
+  <script>
+    document.getElementById('demo-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const result = document.getElementById('form-result');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      const data = {
+        first_name: document.getElementById('first_name').value,
+        last_name: document.getElementById('last_name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value || 'Not provided',
+        firm_name: document.getElementById('firm').value,
+        interest: document.getElementById('interest').value,
+        source: 'ProspectAI Website',
+        advisor_name: 'Gavin Vizzini',
+        firm_name_prospect: document.getElementById('firm').value,
+        calendly_link: 'https://calendly.com/YOUR_LINK_HERE'
+      };
+
+      try {
+        const resp = await fetch('https://hook.us2.make.com/vkaxovngtm7f3tmqkkkw7vvokdbep0o2', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (resp.ok) {
+          result.style.display = 'block';
+          result.style.background = '#d1fae5';
+          result.style.color = '#065f46';
+          result.textContent = "✅ Got it! You'll hear from us within 5 minutes.";
+          this.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      } catch(err) {
+        result.style.display = 'block';
+        result.style.background = '#fee2e2';
+        result.style.color = '#991b1b';
+        result.textContent = '❌ Something went wrong. Please email us directly.';
+      }
+
+      btn.textContent = 'Request My Free Demo →';
+      btn.disabled = false;
+    });
+  </script>
 </body>
 </html>

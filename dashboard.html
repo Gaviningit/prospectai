@@ -602,7 +602,7 @@
     // 1. Open your Google Sheet → File → Share → Publish to web
     // 2. Choose "Entire Document" → CSV → Publish
     // 3. Copy the URL and paste it below
-    const SHEET_CSV_URL = ''; // e.g. 'https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pub?output=csv'
+    const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/14z8-EMXElO1as6x1abB1mL7Q8rzYOlpqhljzC8oSWT0/pub?output=csv';
     // ────────────────────────────────────────────────────────────────────
 
     const DEMO_LEADS = [
@@ -688,18 +688,31 @@
     function parseCSV(csv) {
       const lines = csv.trim().split('\n');
       if (lines.length < 2) return [];
-      const headers = lines[0].split(',').map(h => h.trim().toLowerCase().replace(/"/g,''));
+      // Split handling quoted fields with commas inside
+      function splitLine(line) {
+        const result = []; let cur = ''; let inQ = false;
+        for (let i = 0; i < line.length; i++) {
+          const c = line[i];
+          if (c === '"') { inQ = !inQ; }
+          else if (c === ',' && !inQ) { result.push(cur.trim()); cur = ''; }
+          else { cur += c; }
+        }
+        result.push(cur.trim());
+        return result;
+      }
+      const headers = splitLine(lines[0]).map(h => h.toLowerCase().replace(/"/g,'').trim());
       return lines.slice(1).map(line => {
-        const cols = line.split(',').map(c => c.trim().replace(/"/g,''));
+        const cols = splitLine(line).map(c => c.replace(/"/g,'').trim());
         const obj = {};
         headers.forEach((h, i) => obj[h] = cols[i] || '');
+        // Support multiple possible column name formats from Make.com
         return {
-          date:     obj['date'] || obj['timestamp'] || '',
-          name:     obj['name'] || `${obj['first_name'] || ''} ${obj['last_name'] || ''}`.trim(),
-          email:    obj['email'] || '',
-          firm:     obj['firm'] || obj['firm_name'] || '',
+          date:     obj['date'] || obj['timestamp'] || obj['created_at'] || obj['submitted'] || '',
+          name:     obj['name'] || `${obj['first name'] || obj['first_name'] || ''} ${obj['last name'] || obj['last_name'] || ''}`.trim(),
+          email:    obj['email'] || obj['email address'] || '',
+          firm:     obj['firm'] || obj['firm name'] || obj['firm_name'] || obj['company'] || '',
           status:   obj['status'] || 'New Lead',
-          response: obj['response_time'] || '—'
+          response: obj['response time'] || obj['response_time'] || '—'
         };
       }).filter(l => l.name && l.email);
     }

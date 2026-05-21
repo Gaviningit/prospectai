@@ -690,33 +690,39 @@
     function parseCSV(csv) {
       const lines = csv.trim().split('\n');
       if (lines.length < 2) return [];
-      // Split handling quoted fields with commas inside
-      function splitLine(line) {
+      // Split handling quoted fields with commas or tabs inside
+      function splitLine(line, sep) {
+        if (!sep) {
+          // Auto-detect: use comma if present in significant quantity, else tab
+          const commas = (line.match(/,/g) || []).length;
+          const tabs = (line.match(/\t/g) || []).length;
+          sep = (tabs > 0 && tabs >= commas) ? '\t' : ',';
+        }
         const result = []; let cur = ''; let inQ = false;
         for (let i = 0; i < line.length; i++) {
           const c = line[i];
           if (c === '"') { inQ = !inQ; }
-          else if (c === ',' && !inQ) { result.push(cur.trim()); cur = ''; }
-          else { cur += c; }
+          else if (c === sep && !inQ) { result.push(cur.trim()); cur = ''; }
+          else if (c !== '\r') { cur += c; }
         }
         result.push(cur.trim());
         return result;
       }
-      const headers = splitLine(lines[0]).map(h => h.toLowerCase().replace(/"/g,'').trim());
+      // Sheet2 column order: A=Date, B=First Name, C=Last Name, D=Email,
+      // E=Phone, F=Firm Name, G=Interest, H=Status, I=Response Time, J=Notes
+      // Use positional access (robust regardless of header format)
       return lines.slice(1).map(line => {
-        const cols = splitLine(line).map(c => c.replace(/"/g,'').trim());
-        const obj = {};
-        headers.forEach((h, i) => obj[h] = cols[i] || '');
-        // Support multiple possible column name formats from Make.com
+        const cols = splitLine(line, ',').map(c => c.replace(/"/g,'').trim());
+        if (cols.length < 4 || !cols[3]) return null; // skip rows without email
         return {
-          date:     obj['date'] || obj['timestamp'] || obj['created_at'] || obj['submitted'] || '',
-          name:     obj['name'] || `${obj['first name'] || obj['first_name'] || ''} ${obj['last name'] || obj['last_name'] || ''}`.trim(),
-          email:    obj['email'] || obj['email address'] || '',
-          firm:     obj['firm'] || obj['firm name'] || obj['firm_name'] || obj['company'] || '',
-          status:   obj['status'] || 'New Lead',
-          response: obj['response time'] || obj['response_time'] || '—'
+          date:     cols[0] || '',
+          name:     `${cols[1] || ''} ${cols[2] || ''}`.trim(),
+          email:    cols[3] || '',
+          firm:     cols[5] || '',
+          status:   cols[7] || 'New Lead',
+          response: cols[8] || '—'
         };
-      }).filter(l => l.name && l.email);
+      }).filter(l => l && l.name && l.email);
     }
 
     // ── RENDER STATS ──

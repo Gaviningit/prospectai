@@ -668,7 +668,9 @@
     // ── GOOGLE SHEETS FETCH ──
     async function fetchSheetData() {
       try {
-        const resp = await fetch(SHEET_CSV_URL);
+        // Use CORS proxy to bypass browser cross-origin restriction on Google Sheets CSV
+        const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(SHEET_CSV_URL);
+        const resp = await fetch(proxyUrl);
         const csv = await resp.text();
         const leads = parseCSV(csv);
         if (leads.length > 0) {

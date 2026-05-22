@@ -693,92 +693,52 @@ body {
 .cstatus-new    { background: rgba(162,234,19,0.12); color: #5a8a00; }
 
 /* ══════════════════════════════════════
-   TESTIMONIALS
+   EARLY ACCESS (replaces testimonials)
 ══════════════════════════════════════ */
 
-.testimonials {
-  background: var(--color-canvas-white);
-  padding: 120px 0;
+.early-access {
+  background: var(--color-air-blue);
+  padding: 100px 0;
   text-align: center;
 }
 
-.testi-h2 {
+.ea-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.ea-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-action-violet);
+  border: 1px solid var(--color-action-violet);
+  border-radius: var(--radius-badges);
+  padding: 6px 16px;
+}
+
+.ea-h2 {
   font-family: var(--font-display);
-  font-size: clamp(34px, 4.5vw, 52px);
+  font-size: clamp(32px, 4.5vw, 50px);
   font-weight: 700;
   color: var(--color-rich-violet);
   letter-spacing: -0.03em;
   line-height: 1.1;
-  margin-bottom: 60px;
 }
 
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  text-align: left;
-}
-
-.testi-card {
-  background: var(--color-canvas-white);
-  border: 1px solid var(--color-cloud-mist);
-  border-radius: var(--radius-cards);
-  padding: 36px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: box-shadow 0.2s ease;
-}
-.testi-card:hover { box-shadow: 0 8px 32px rgba(89,46,255,0.07); }
-
-.testi-card-featured {
-  background: var(--color-air-blue);
-  border-color: transparent;
-}
-
-.testi-stars {
-  color: var(--color-action-violet);
-  font-size: 16px;
-  letter-spacing: 2px;
-}
-
-.testi-quote {
-  font-size: 16px;
-  line-height: 1.7;
+.ea-sub {
+  font-size: 18px;
   color: var(--color-slate-text);
-  flex: 1;
-  font-weight: 400;
-}
-
-.testi-author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.testi-avatar {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--color-action-violet);
-  color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: var(--font-display);
-  flex-shrink: 0;
-}
-
-.testi-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--color-rich-violet);
-  letter-spacing: -0.01em;
-}
-.testi-role {
-  font-size: 13px;
-  color: var(--color-slate-text);
-  opacity: 0.55;
-  margin-top: 3px;
+  opacity: 0.7;
+  line-height: 1.65;
+  max-width: 520px;
 }
 
 /* ══════════════════════════════════════

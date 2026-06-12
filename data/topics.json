@@ -1,24 +1,126 @@
 {
   "topics": [
-    { "topic": "Monarch Money Review — The Best Personal Finance App Nobody Talks About", "category": "budgeting", "categoryLabel": "Personal Finance", "status": "pending" },
-    { "topic": "Wealthfront Review — Is the AI-Powered Robo-Advisor Still King in 2026?", "category": "investing", "categoryLabel": "AI Investing", "status": "pending" },
-    { "topic": "Betterment Review — AI Robo-Advisor Tested With Real Money", "category": "investing", "categoryLabel": "AI Investing", "status": "pending" },
-    { "topic": "The Best AI Writing Tools in 2026 — 7 Tested and Ranked", "category": "writing", "categoryLabel": "AI Writing", "status": "pending" },
-    { "topic": "Jasper vs Copy.ai — Which AI Writing Tool Is Worth Paying For?", "category": "writing", "categoryLabel": "AI Writing", "status": "pending" },
-    { "topic": "The Best AI Coding Assistants in 2026 — Tested by a Non-Coder and a Pro", "category": "coding", "categoryLabel": "AI Coding", "status": "pending" },
-    { "topic": "Notion AI Review — Is the Built-In Assistant Worth the Upgrade?", "category": "productivity", "categoryLabel": "AI Productivity", "status": "pending" },
-    { "topic": "The Best AI Tools for Tax Preparation in 2026", "category": "budgeting", "categoryLabel": "Personal Finance", "status": "pending" },
-    { "topic": "Tiller Money Review — AI-Powered Budgeting in a Spreadsheet", "category": "budgeting", "categoryLabel": "Personal Finance", "status": "pending" },
-    { "topic": "Public.com Review — Are Its AI Investing Features Actually Useful?", "category": "investing", "categoryLabel": "AI Investing", "status": "pending" },
-    { "topic": "The Best AI Email Marketing Tools in 2026 — Ranked", "category": "marketing", "categoryLabel": "AI Marketing", "status": "pending" },
-    { "topic": "Surfer SEO Review — Can AI Really Rank Your Content?", "category": "marketing", "categoryLabel": "AI Marketing", "status": "pending" },
-    { "topic": "Reclaim AI Review — The Smart Calendar That Plans Your Week", "category": "productivity", "categoryLabel": "AI Productivity", "status": "pending" },
-    { "topic": "Titan Invest Review — An AI Hedge Fund for Regular Investors?", "category": "investing", "categoryLabel": "AI Investing", "status": "pending" },
-    { "topic": "The Best AI Portfolio Trackers Compared — 2026 Edition", "category": "investing", "categoryLabel": "AI Investing", "status": "pending" },
-    { "topic": "Grammarly vs ProWritingAid — The AI Editing Showdown", "category": "writing", "categoryLabel": "AI Writing", "status": "pending" },
-    { "topic": "The Best AI Note-Taking Apps in 2026 — Tested and Ranked", "category": "productivity", "categoryLabel": "AI Productivity", "status": "pending" },
-    { "topic": "Plaid and the AI Finance Stack — What It Is and Why It Matters", "category": "advisors", "categoryLabel": "For Advisors", "status": "pending" },
-    { "topic": "The Best AI Social Media Tools for Small Businesses in 2026", "category": "marketing", "categoryLabel": "AI Marketing", "status": "pending" },
-    { "topic": "Best Free AI Tools in 2026 — 12 Genuinely Useful Picks That Cost Nothing", "category": "productivity", "categoryLabel": "AI Productivity", "status": "pending" }
+    {
+      "topic": "Monarch Money Review — The Best Personal Finance App Nobody Talks About",
+      "category": "budgeting",
+      "categoryLabel": "Personal Finance",
+      "status": "done",
+      "publishedSlug": "monarch-money-review-best-personal-finance-app",
+      "publishedDate": "2026-06-12"
+    },
+    {
+      "topic": "Wealthfront Review — Is the AI-Powered Robo-Advisor Still King in 2026?",
+      "category": "investing",
+      "categoryLabel": "AI Investing",
+      "status": "pending"
+    },
+    {
+      "topic": "Betterment Review — AI Robo-Advisor Tested With Real Money",
+      "category": "investing",
+      "categoryLabel": "AI Investing",
+      "status": "pending"
+    },
+    {
+      "topic": "The Best AI Writing Tools in 2026 — 7 Tested and Ranked",
+      "category": "writing",
+      "categoryLabel": "AI Writing",
+      "status": "pending"
+    },
+    {
+      "topic": "Jasper vs Copy.ai — Which AI Writing Tool Is Worth Paying For?",
+      "category": "writing",
+      "categoryLabel": "AI Writing",
+      "status": "pending"
+    },
+    {
+      "topic": "The Best AI Coding Assistants in 2026 — Tested by a Non-Coder and a Pro",
+      "category": "coding",
+      "categoryLabel": "AI Coding",
+      "status": "pending"
+    },
+    {
+      "topic": "Notion AI Review — Is the Built-In Assistant Worth the Upgrade?",
+      "category": "productivity",
+      "categoryLabel": "AI Productivity",
+      "status": "pending"
+    },
+    {
+      "topic": "The Best AI Tools for Tax Preparation in 2026",
+      "category": "budgeting",
+      "categoryLabel": "Personal Finance",
+      "status": "pending"
+    },
+    {
+      "topic": "Tiller Money Review — AI-Powered Budgeting in a Spreadsheet",
+      "category": "budgeting",
+      "categoryLabel": "Personal Finance",
+      "status": "pending"
+    },
+    {
+      "topic": "Public.com Review — Are Its AI Investing Features Actually Useful?",
+      "category": "investing",
+      "categoryLabel": "AI Investing",
+      "status": "pending"
+    },
+    {
+      "topic": "The Best AI Email Marketing Tools in 2026 — Ranked",
+      "category": "marketing",
+      "categoryLabel": "AI Marketing",
+      "status": "pending"
+    },
+    {
+      "topic": "Surfer SEO Review — Can AI Really Rank Your Content?",
+      "category": "marketing",
+      "categoryLabel": "AI Marketing",
+      "status": "pending"
+    },
+    {
+      "topic": "Reclaim AI Review — The Smart Calendar That Plans Your Week",
+      "category": "productivity",
+      "categoryLabel": "AI Productivity",
+      "status": "pending"
+    },
+    {
+      "topic": "Titan Invest Review — An AI Hedge Fund for Regular Investors?",
+      "category": "investing",
+      "categoryLabel": "AI Investing",
+      "status": "pending"
+    },
+    {
+      "topic": "The Best AI Portfolio Trackers Compared — 2026 Edition",
+      "category": "investing",
+      "categoryLabel": "AI Investing",
+      "status": "pending"
+    },
+    {
+      "topic": "Grammarly vs ProWritingAid — The AI Editing Showdown",
+      "category": "writing",
+      "categoryLabel": "AI Writing",
+      "status": "pending"
+    },
+    {
+      "topic": "The Best AI Note-Taking Apps in 2026 — Tested and Ranked",
+      "category": "productivity",
+      "categoryLabel": "AI Productivity",
+      "status": "pending"
+    },
+    {
+      "topic": "Plaid and the AI Finance Stack — What It Is and Why It Matters",
+      "category": "advisors",
+      "categoryLabel": "For Advisors",
+      "status": "pending"
+    },
+    {
+      "topic": "The Best AI Social Media Tools for Small Businesses in 2026",
+      "category": "marketing",
+      "categoryLabel": "AI Marketing",
+      "status": "pending"
+    },
+    {
+      "topic": "Best Free AI Tools in 2026 — 12 Genuinely Useful Picks That Cost Nothing",
+      "category": "productivity",
+      "categoryLabel": "AI Productivity",
+      "status": "pending"
+    }
   ]
 }

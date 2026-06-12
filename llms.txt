@@ -1,0 +1,15 @@
+# ProspectAI
+
+> Independent, hands-on reviews of AI tools across investing, personal finance, financial advisors, writing, coding, marketing, and productivity. Every tool is tested with real accounts before review. Affiliate links are disclosed and never influence verdicts.
+
+## Reviews
+- [All reviews](https://gaviningit.github.io/prospectai/reviews.html): Full review library, filterable by category
+- [7 Best AI Stock Analysis Tools](https://gaviningit.github.io/prospectai/articles/best-ai-stock-analysis-tools.html): Ranked comparison of AI investing platforms
+- [Magnifi Review](https://gaviningit.github.io/prospectai/articles/magnifi-review.html): Natural-language AI investment search
+- [Copilot vs Monarch Money](https://gaviningit.github.io/prospectai/articles/copilot-vs-monarch.html): AI budgeting app comparison
+- [Composer Review](https://gaviningit.github.io/prospectai/articles/composer-review.html): No-code AI trading automation
+- [AI Tools for Financial Advisors](https://gaviningit.github.io/prospectai/articles/ai-tools-for-financial-advisors.html): Practice automation guide
+
+## About
+- [About ProspectAI](https://gaviningit.github.io/prospectai/about.html): Testing methodology and editorial policy
+- [Affiliate Disclosure](https://gaviningit.github.io/prospectai/disclosure.html): How the site earns money

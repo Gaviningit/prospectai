@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaviningit.github.io/prospectai/sitemap.xml

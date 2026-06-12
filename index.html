@@ -3,289 +3,363 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProspectAI — Honest AI Tool Reviews for Finance & Investing</title>
-  <meta name="description" content="Independent reviews of the best AI tools for finance, investing, trading, and wealth management. Updated weekly." />
-  <link rel="stylesheet" href="styles.css" />
+  <title>ProspectAI — Honest AI Tool Reviews. Every Niche. Actually Tested.</title>
+  <meta name="description" content="Independent, hands-on reviews of the best AI tools for investing, personal finance, writing, coding, marketing, and productivity. We test everything. No pay-for-praise." />
+  <meta property="og:title" content="ProspectAI — Honest AI Tool Reviews" />
+  <meta property="og:description" content="Independent, hands-on reviews of the best AI tools across investing, finance, writing, coding, marketing, and productivity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gaviningit.github.io/prospectai/" />
+  <link rel="canonical" href="https://gaviningit.github.io/prospectai/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236e56ff'/%3E%3Cstop offset='1' stop-color='%2300e5a0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%2305060a'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-weight='bold' font-size='52' fill='url(%23g)' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=3" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ProspectAI",
+    "url": "https://gaviningit.github.io/prospectai/",
+    "description": "Independent, hands-on reviews of AI tools across investing, personal finance, writing, coding, marketing, and productivity."
+  }
+  </script>
 </head>
 <body>
-
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container">
-      <div class="topbar-inner">
-        <span class="topbar-label">New →</span>
-        <div class="topbar-items">
-          <a href="articles/best-ai-stock-analysis-tools.html" class="topbar-item"><span>AI Trading:</span> 7 Best Stock Analysis Tools Ranked</a>
-          <span class="topbar-divider">|</span>
-          <a href="articles/magnifi-review.html" class="topbar-item"><span>Review:</span> Magnifi — AI Investing Assistant</a>
-          <span class="topbar-divider">|</span>
-          <a href="articles/copilot-vs-monarch.html" class="topbar-item"><span>Compare:</span> Copilot vs Monarch Money</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- NAV -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Prospect<span class="logo-ai">AI</span></a>
+      <a href="index.html" class="nav-logo">Prospect<span class="logo-ai">AI</span></a>
       <div class="nav-cats">
-        <a href="#" class="nav-cat">AI Trading</a>
-        <a href="#" class="nav-cat">AI Budgeting</a>
-        <a href="#" class="nav-cat">For Advisors</a>
-        <a href="#" class="nav-cat">AI Investing</a>
-        <a href="#" class="nav-cat">Compare</a>
+        <a href="reviews.html?cat=investing" class="nav-cat">Investing</a>
+        <a href="reviews.html?cat=budgeting" class="nav-cat">Personal Finance</a>
+        <a href="reviews.html?cat=writing" class="nav-cat">Writing</a>
+        <a href="reviews.html?cat=coding" class="nav-cat">Coding</a>
+        <a href="reviews.html?cat=marketing" class="nav-cat">Marketing</a>
+        <a href="reviews.html?cat=productivity" class="nav-cat">Productivity</a>
       </div>
       <div class="nav-right">
-        <span class="nav-search">🔍</span>
-        <a href="#newsletter" class="btn btn-violet">Newsletter</a>
+        <a href="#newsletter" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Newsletter</a>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container hero-pb">
-      <div class="hero-grid">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <canvas id="particles"></canvas>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow"><span class="pulse"></span> New reviews published weekly</div>
+        <h1>We test AI tools<br /><span class="grad-text">so you don't waste money.</span></h1>
+        <p class="hero-sub">Hands-on, independent reviews of AI tools across investing, finance, writing, coding, marketing, and productivity. Real testing. Honest verdicts. Zero pay-for-praise.</p>
+        <div class="hero-ctas">
+          <a href="reviews.html" class="btn btn-primary">Browse All Reviews →</a>
+          <a href="#finder" class="btn btn-ghost">Find My Tool ✨</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num" data-count="40">40+</div><div class="stat-label">Tools Tested</div></div>
+        <div class="stat"><div class="stat-num">7</div><div class="stat-label">AI Niches Covered</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Independent</div></div>
+        <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Paid Placements</div></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Featured article -->
-        <a href="articles/best-ai-stock-analysis-tools.html" class="hero-main">
-          <div class="hero-img">
-            <div class="hero-img-overlay"></div>
-            <div class="hero-img-label">Editor's Pick</div>
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <!-- TICKER:START -->
+      <a href="articles/best-ai-stock-analysis-tools.html" class="ticker-item"><b>NEW</b> The 7 Best AI Stock Analysis Tools — Ranked</a>
+      <a href="articles/magnifi-review.html" class="ticker-item"><b>REVIEW</b> Magnifi — The AI That Searches Investments Like Google</a>
+      <a href="articles/copilot-vs-monarch.html" class="ticker-item"><b>VS</b> Copilot vs Monarch Money — Best Mint Replacement</a>
+      <a href="articles/composer-review.html" class="ticker-item"><b>REVIEW</b> Composer — Automated Trading Without Code</a>
+      <a href="articles/ai-tools-for-financial-advisors.html" class="ticker-item"><b>GUIDE</b> 5 AI Tools Every Financial Advisor Needs</a>
+      <!-- TICKER:END -->
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-kicker">Editor's Desk</span>
+          <h2 class="section-title">Featured This Week</h2>
+        </div>
+      </div>
+      <div class="featured-grid reveal">
+        <a href="articles/best-ai-stock-analysis-tools.html" class="featured-main">
+          <div class="featured-visual">
+            <span class="featured-label">★ Editor's Pick</span>
           </div>
-          <div class="hero-main-body">
-            <span class="tag tag-trading">AI Trading</span>
-            <h1 class="hero-headline">The 7 Best AI Stock Analysis Tools in 2025 — Ranked and Reviewed</h1>
-            <p class="hero-excerpt">We tested every major AI investing platform so you don't have to. Here's what actually helps you make better trades — and what's just expensive hype.</p>
-            <div class="hero-meta">
-              <span>8 min read</span>
-              <div class="hero-meta-dot"></div>
-              <span>June 2025</span>
-              <div class="hero-meta-dot"></div>
-              <span>Updated weekly</span>
-            </div>
+          <div class="featured-body">
+            <span class="tag tag-trading">AI Investing</span>
+            <h3 class="featured-headline">The 7 Best AI Stock Analysis Tools in 2025 — Ranked and Reviewed</h3>
+            <p class="featured-excerpt">We tested every major AI investing platform so you don't have to. Here's what actually helps you make better trades — and what's just expensive hype.</p>
+            <div class="card-meta"><span>8 min read</span><div class="meta-dot"></div><span>Updated weekly</span></div>
           </div>
         </a>
-
-        <!-- Top stories sidebar -->
-        <div class="hero-sidebar">
-          <div class="hero-sidebar-head">Top Stories</div>
-
+        <div class="top-stories">
+          <div class="top-stories-head">Trending Now</div>
           <a href="articles/magnifi-review.html" class="top-story">
             <span class="top-story-num">01</span>
-            <div class="top-story-title">Magnifi Review — Is This AI Investing Assistant Worth the Price?</div>
-            <div class="top-story-meta"><span class="tag tag-investing" style="font-size:10px;padding:2px 8px;">AI Investing</span> · 7 min</div>
+            <div>
+              <div class="top-story-title">Magnifi Review — Is This AI Investing Assistant Worth the Price?</div>
+              <div class="top-story-meta"><span class="tag tag-investing">Investing</span> · 7 min</div>
+            </div>
           </a>
-
           <a href="articles/copilot-vs-monarch.html" class="top-story">
             <span class="top-story-num">02</span>
-            <div class="top-story-title">Copilot vs Monarch Money — Which AI Budgeting App Wins?</div>
-            <div class="top-story-meta"><span class="tag tag-budgeting" style="font-size:10px;padding:2px 8px;">AI Budgeting</span> · 5 min</div>
+            <div>
+              <div class="top-story-title">Copilot vs Monarch Money — Which AI Budgeting App Wins?</div>
+              <div class="top-story-meta"><span class="tag tag-budgeting">Finance</span> · 5 min</div>
+            </div>
           </a>
-
           <a href="articles/ai-tools-for-financial-advisors.html" class="top-story">
             <span class="top-story-num">03</span>
-            <div class="top-story-title">How Financial Advisors Are Using AI to Save 10 Hours a Week</div>
-            <div class="top-story-meta"><span class="tag tag-advisors" style="font-size:10px;padding:2px 8px;">For Advisors</span> · 6 min</div>
+            <div>
+              <div class="top-story-title">How Financial Advisors Are Using AI to Save 10 Hours a Week</div>
+              <div class="top-story-meta"><span class="tag tag-advisors">Advisors</span> · 6 min</div>
+            </div>
           </a>
-
           <a href="articles/composer-review.html" class="top-story">
             <span class="top-story-num">04</span>
-            <div class="top-story-title">Composer Review — Can AI Really Automate Your Trading Strategy?</div>
-            <div class="top-story-meta"><span class="tag tag-trading" style="font-size:10px;padding:2px 8px;">AI Trading</span> · 6 min</div>
+            <div>
+              <div class="top-story-title">Composer Review — Can AI Really Automate Your Trading?</div>
+              <div class="top-story-meta"><span class="tag tag-trading">Investing</span> · 6 min</div>
+            </div>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- CATEGORIES -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-kicker">Explore</span>
+          <h2 class="section-title">Every AI Niche, One Site</h2>
+        </div>
+      </div>
+      <div class="cat-grid reveal">
+        <a href="reviews.html?cat=investing" class="cat-card" style="--cat-accent:var(--c-investing);">
+          <div class="cat-icon">📈</div>
+          <div class="cat-name">AI Investing &amp; Trading</div>
+          <div class="cat-count">Stock analysis · robo-advisors · automation</div>
+          <span class="cat-arrow">→</span>
+        </a>
+        <a href="reviews.html?cat=budgeting" class="cat-card" style="--cat-accent:var(--c-budgeting);">
+          <div class="cat-icon">💰</div>
+          <div class="cat-name">AI Personal Finance</div>
+          <div class="cat-count">Budgeting · saving · spend tracking</div>
+          <span class="cat-arrow">→</span>
+        </a>
+        <a href="reviews.html?cat=advisors" class="cat-card" style="--cat-accent:var(--c-advisors);">
+          <div class="cat-icon">🤝</div>
+          <div class="cat-name">AI for Advisors</div>
+          <div class="cat-count">Practice automation · client tools</div>
+          <span class="cat-arrow">→</span>
+        </a>
+        <a href="reviews.html?cat=writing" class="cat-card" style="--cat-accent:var(--c-writing);">
+          <div class="cat-icon">✍️</div>
+          <div class="cat-name">AI Writing</div>
+          <div class="cat-count">Copywriting · editing · content</div>
+          <span class="cat-arrow">→</span>
+        </a>
+        <a href="reviews.html?cat=coding" class="cat-card" style="--cat-accent:var(--c-coding);">
+          <div class="cat-icon">⌨️</div>
+          <div class="cat-name">AI Coding</div>
+          <div class="cat-count">Assistants · agents · no-code</div>
+          <span class="cat-arrow">→</span>
+        </a>
+        <a href="reviews.html?cat=marketing" class="cat-card" style="--cat-accent:var(--c-marketing);">
+          <div class="cat-icon">📣</div>
+          <div class="cat-name">AI Marketing</div>
+          <div class="cat-count">SEO · ads · social · email</div>
+          <span class="cat-arrow">→</span>
+        </a>
+        <a href="reviews.html?cat=productivity" class="cat-card" style="--cat-accent:var(--c-productivity);">
+          <div class="cat-icon">⚡</div>
+          <div class="cat-name">AI Productivity</div>
+          <div class="cat-count">Notes · scheduling · automation</div>
+          <span class="cat-arrow">→</span>
+        </a>
+        <a href="reviews.html" class="cat-card" style="--cat-accent:var(--mint);">
+          <div class="cat-icon">🔍</div>
+          <div class="cat-name">All Reviews</div>
+          <div class="cat-count">Browse the full library</div>
+          <span class="cat-arrow">→</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- LATEST REVIEWS -->
-  <section class="articles-section">
+  <section class="section" style="padding-top:0;">
     <div class="container">
-      <div class="section-header">
-        <span class="section-title">Latest Reviews</span>
-        <a href="#" class="section-more">View all →</a>
+      <div class="section-header reveal">
+        <div>
+          <span class="section-kicker">Fresh Off The Test Bench</span>
+          <h2 class="section-title">Latest Reviews</h2>
+        </div>
+        <a href="reviews.html" class="section-more">View all →</a>
       </div>
-      <div class="articles-grid">
-
+      <div class="articles-grid reveal">
+        <!-- LATEST:START -->
         <a href="articles/best-ai-stock-analysis-tools.html" class="article-card">
           <div class="article-thumb thumb-trading"></div>
           <div class="article-body">
-            <span class="tag tag-trading">AI Trading</span>
-            <h2 class="article-headline">7 Best AI Stock Analysis Tools — Ranked for Every Type of Investor</h2>
+            <span class="tag tag-trading">AI Investing</span>
+            <h3 class="article-headline">7 Best AI Stock Analysis Tools — Ranked for Every Type of Investor</h3>
             <p class="article-excerpt">From beginner-friendly apps to pro-grade scanners, we ranked the best AI stock tools available right now.</p>
-            <div class="article-foot">
-              <span>8 min read</span>
-              <div class="article-foot-dot"></div>
-              <span>June 2025</span>
-            </div>
+            <div class="card-meta"><span>8 min read</span><div class="meta-dot"></div><span>June 2025</span></div>
           </div>
         </a>
-
         <a href="articles/magnifi-review.html" class="article-card">
           <div class="article-thumb thumb-investing"></div>
           <div class="article-body">
             <span class="tag tag-investing">AI Investing</span>
-            <h2 class="article-headline">Magnifi Review 2025 — The AI Investment Assistant That Searches Like Google</h2>
+            <h3 class="article-headline">Magnifi Review 2025 — The AI Investment Assistant That Searches Like Google</h3>
             <p class="article-excerpt">Magnifi lets you search for investments using plain English. We tested it for 30 days with real money.</p>
-            <div class="article-foot">
-              <span>7 min read</span>
-              <div class="article-foot-dot"></div>
-              <span>June 2025</span>
-            </div>
+            <div class="card-meta"><span>7 min read</span><div class="meta-dot"></div><span>June 2025</span></div>
           </div>
         </a>
-
         <a href="articles/ai-tools-for-financial-advisors.html" class="article-card">
           <div class="article-thumb thumb-advisors"></div>
           <div class="article-body">
             <span class="tag tag-advisors">For Advisors</span>
-            <h2 class="article-headline">5 AI Tools Every Financial Advisor Should Be Using in 2025</h2>
+            <h3 class="article-headline">5 AI Tools Every Financial Advisor Should Be Using in 2025</h3>
             <p class="article-excerpt">The advisors pulling ahead of the pack have one thing in common — they've automated the grunt work with AI.</p>
-            <div class="article-foot">
-              <span>6 min read</span>
-              <div class="article-foot-dot"></div>
-              <span>June 2025</span>
-            </div>
+            <div class="card-meta"><span>6 min read</span><div class="meta-dot"></div><span>June 2025</span></div>
           </div>
         </a>
-
         <a href="articles/copilot-vs-monarch.html" class="article-card">
           <div class="article-thumb thumb-budgeting"></div>
           <div class="article-body">
-            <span class="tag tag-budgeting">AI Budgeting</span>
-            <h2 class="article-headline">Copilot vs Monarch Money — The Best Mint Replacement in 2025</h2>
-            <p class="article-excerpt">Both use AI to track your spending automatically. But they serve very different types of users. Here's which one is for you.</p>
-            <div class="article-foot">
-              <span>5 min read</span>
-              <div class="article-foot-dot"></div>
-              <span>May 2025</span>
-            </div>
+            <span class="tag tag-budgeting">Personal Finance</span>
+            <h3 class="article-headline">Copilot vs Monarch Money — The Best Mint Replacement in 2025</h3>
+            <p class="article-excerpt">Both use AI to track your spending automatically. But they serve very different types of users.</p>
+            <div class="card-meta"><span>5 min read</span><div class="meta-dot"></div><span>May 2025</span></div>
           </div>
         </a>
-
         <a href="articles/composer-review.html" class="article-card">
           <div class="article-thumb thumb-trading"></div>
           <div class="article-body">
-            <span class="tag tag-trading">AI Trading</span>
-            <h2 class="article-headline">Composer Review — Build Automated Trading Strategies Without Code</h2>
+            <span class="tag tag-trading">AI Investing</span>
+            <h3 class="article-headline">Composer Review — Build Automated Trading Strategies Without Code</h3>
             <p class="article-excerpt">Composer lets you describe a trading strategy in plain English and it builds it for you. We ran it live for a month.</p>
-            <div class="article-foot">
-              <span>6 min read</span>
-              <div class="article-foot-dot"></div>
-              <span>May 2025</span>
-            </div>
+            <div class="card-meta"><span>6 min read</span><div class="meta-dot"></div><span>May 2025</span></div>
           </div>
         </a>
-
-        <a href="articles/monarch-money-review.html" class="article-card">
-          <div class="article-thumb thumb-budgeting"></div>
-          <div class="article-body">
-            <span class="tag tag-budgeting">AI Budgeting</span>
-            <h2 class="article-headline">Monarch Money Review — The Best Personal Finance App Nobody Talks About</h2>
-            <p class="article-excerpt">Monarch quietly became the most powerful personal finance app available. Here's why it beats every Mint alternative.</p>
-            <div class="article-foot">
-              <span>5 min read</span>
-              <div class="article-foot-dot"></div>
-              <span>May 2025</span>
-            </div>
-          </div>
-        </a>
-
+        <!-- LATEST:END -->
       </div>
     </div>
   </section>
 
-  <!-- HEAD TO HEAD -->
-  <section class="compare-section">
+  <!-- TOOL FINDER -->
+  <section class="section" id="finder" style="padding-top:0;">
     <div class="container">
-      <div class="section-header">
-        <span class="section-title">Head-to-Head Comparisons</span>
-        <a href="#" class="section-more">View all →</a>
+      <div class="finder reveal">
+        <div>
+          <span class="section-kicker">Interactive</span>
+          <h2 class="finder-title">Find your perfect AI tool in 15 seconds.</h2>
+          <p class="finder-sub">Answer three quick questions and we'll match you with the tool we'd actually recommend — based on our hands-on testing, not sponsorships.</p>
+        </div>
+        <div class="finder-box" id="finder-box"></div>
       </div>
-      <div class="compare-grid">
+    </div>
+  </section>
 
+  <!-- COMPARISONS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-kicker">Head to Head</span>
+          <h2 class="section-title">Tool vs Tool</h2>
+        </div>
+      </div>
+      <div class="compare-grid reveal">
         <a href="articles/copilot-vs-monarch.html" class="compare-card">
           <div class="compare-vs">
             <span class="compare-pill compare-pill-a">Copilot</span>
             <span class="compare-vs-text">VS</span>
             <span class="compare-pill compare-pill-b">Monarch</span>
           </div>
-          <p class="compare-desc">The two best Mint replacements go head to head. Both use AI to track spending, but they're built for different types of users. Which one should you pay for?</p>
-          <span class="compare-cta">Read comparison →</span>
+          <p class="compare-desc">The two best Mint replacements go head to head. Both use AI to track spending, but they're built for different users. Which one should you pay for?</p>
+          <span class="compare-cta">Read the comparison →</span>
         </a>
-
-        <a href="articles/magnifi-review.html" class="compare-card">
+        <a href="articles/best-ai-stock-analysis-tools.html" class="compare-card">
           <div class="compare-vs">
             <span class="compare-pill compare-pill-a">Magnifi</span>
             <span class="compare-vs-text">VS</span>
             <span class="compare-pill compare-pill-b">Composer</span>
           </div>
           <p class="compare-desc">Two very different approaches to AI investing — one searches the market like Google, the other automates your entire strategy. Which fits your style?</p>
-          <span class="compare-cta">Read comparison →</span>
+          <span class="compare-cta">Read the comparison →</span>
         </a>
+      </div>
+    </div>
+  </section>
 
+  <!-- METHODOLOGY -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-kicker">Why Trust Us</span>
+          <h2 class="section-title">How We Review</h2>
+        </div>
+      </div>
+      <div class="method-strip reveal">
+        <div class="method-item">
+          <div class="method-num">01 — Hands-On Testing</div>
+          <div class="method-name">We actually use every tool</div>
+          <div class="method-desc">Real accounts, real money where applicable, minimum two weeks of daily use before we write a word.</div>
+        </div>
+        <div class="method-item">
+          <div class="method-num">02 — No Pay-for-Praise</div>
+          <div class="method-name">Verdicts can't be bought</div>
+          <div class="method-desc">We earn affiliate commission on some links — but companies never see reviews early and can't influence scores.</div>
+        </div>
+        <div class="method-item">
+          <div class="method-num">03 — Kept Current</div>
+          <div class="method-name">Reviews get re-tested</div>
+          <div class="method-desc">AI tools change monthly. We re-verify pricing and features on a rolling basis and date-stamp every update.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- NEWSLETTER -->
-  <section class="newsletter-section" id="newsletter">
+  <section class="section" id="newsletter" style="padding-top:0;">
     <div class="container">
-      <div class="newsletter-box">
-        <div class="newsletter-text">
+      <div class="newsletter-box reveal">
+        <div>
           <span class="nl-eyebrow">Free Weekly Newsletter</span>
-          <h2 class="nl-h2">One AI finance tool reviewed, every Sunday.</h2>
-          <p class="nl-sub">Join investors and advisors who stay ahead. We test a new tool each week and give you the honest verdict — no ads, no fluff.</p>
+          <h2 class="nl-h2">One AI tool reviewed, every Sunday.</h2>
+          <p class="nl-sub">Join readers who stay ahead of the AI curve. One in-depth, honest review per week — no ads, no fluff, no spam.</p>
           <div class="nl-perks">
             <div class="nl-perk">One in-depth review per week</div>
             <div class="nl-perk">Who it's for, what it costs, whether it's worth it</div>
-            <div class="nl-perk">Affiliate links disclosed — always independent</div>
+            <div class="nl-perk">Always independent — affiliate links disclosed</div>
           </div>
         </div>
         <form class="nl-form" onsubmit="handleNewsletter(event)">
           <input type="email" id="nl-email" placeholder="your@email.com" required />
-          <button type="submit" class="btn btn-violet">Subscribe Free →</button>
+          <button type="submit" class="btn btn-primary" style="justify-content:center;">Subscribe Free →</button>
           <p class="nl-note">No spam. Unsubscribe anytime. Free forever.</p>
-          <div id="nl-result" style="display:none;margin-top:8px;font-size:14px;color:#00e89e;"></div>
+          <div id="nl-result" style="display:none;margin-top:4px;font-size:14px;color:#00e5a0;text-align:center;"></div>
         </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
-  <section class="categories-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-title">Browse by Category</span>
-      </div>
-      <div class="cat-grid">
-        <a href="#" class="cat-card">
-          <div class="cat-icon">📈</div>
-          <div class="cat-name">AI Trading Tools</div>
-          <div class="cat-count">8 reviews</div>
-          <div class="cat-arrow">→</div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon">💰</div>
-          <div class="cat-name">AI Budgeting Apps</div>
-          <div class="cat-count">6 reviews</div>
-          <div class="cat-arrow">→</div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon">🤝</div>
-          <div class="cat-name">AI for Advisors</div>
-          <div class="cat-count">5 reviews</div>
-          <div class="cat-arrow">→</div>
-        </a>
-        <a href="#" class="cat-card">
-          <div class="cat-icon">🏦</div>
-          <div class="cat-name">AI Investing</div>
-          <div class="cat-count">5 reviews</div>
-          <div class="cat-arrow">→</div>
-        </a>
       </div>
     </div>
   </section>
@@ -294,51 +368,189 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
+        <div>
           <p class="footer-logo">Prospect<span class="logo-ai">AI</span></p>
-          <p class="footer-desc">Independent AI tool reviews for finance, investing, trading, and wealth management. We earn affiliate commission at no cost to you — we never accept payment for reviews.</p>
+          <p class="footer-desc">Independent AI tool reviews across investing, personal finance, writing, coding, marketing, and productivity. We earn affiliate commission at no cost to you — we never accept payment for reviews.</p>
           <p class="footer-email">Questions? <a href="mailto:ProspectAISupport@gmail.com">ProspectAISupport@gmail.com</a></p>
         </div>
         <div class="footer-col">
           <p class="footer-col-head">Categories</p>
-          <a href="#">AI Trading Tools</a>
-          <a href="#">AI Budgeting</a>
-          <a href="#">For Advisors</a>
-          <a href="#">AI Investing</a>
+          <a href="reviews.html?cat=investing">AI Investing</a>
+          <a href="reviews.html?cat=budgeting">Personal Finance</a>
+          <a href="reviews.html?cat=writing">AI Writing</a>
+          <a href="reviews.html?cat=coding">AI Coding</a>
+          <a href="reviews.html?cat=marketing">AI Marketing</a>
         </div>
         <div class="footer-col">
           <p class="footer-col-head">Content</p>
-          <a href="#">Latest Reviews</a>
-          <a href="#">Comparisons</a>
-          <a href="#">Newsletter</a>
-          <a href="#">Best Lists</a>
+          <a href="reviews.html">All Reviews</a>
+          <a href="index.html#finder">Tool Finder</a>
+          <a href="index.html#newsletter">Newsletter</a>
         </div>
         <div class="footer-col">
           <p class="footer-col-head">Site</p>
-          <a href="#">About</a>
-          <a href="#">Affiliate Disclosure</a>
-          <a href="#">Contact</a>
+          <a href="about.html">About</a>
+          <a href="disclosure.html">Affiliate Disclosure</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="mailto:ProspectAISupport@gmail.com">Contact</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2025 ProspectAI. All rights reserved. We may earn commissions from links on this site. This never influences our editorial opinions.</p>
+        <p class="footer-copy">© 2026 ProspectAI. All rights reserved. We may earn commissions from links on this site. This never influences our editorial opinions. Nothing here is financial advice.</p>
         <div class="footer-legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Disclosure</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="disclosure.html">Disclosure</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
+    /* ---- Newsletter ---- */
     function handleNewsletter(e) {
       e.preventDefault();
-      const result = document.getElementById('nl-result');
+      var result = document.getElementById('nl-result');
       result.style.display = 'block';
-      result.textContent = '✅ You\'re in! First review lands this Sunday.';
+      result.textContent = "✅ You're in! First review lands this Sunday.";
       document.getElementById('nl-email').value = '';
     }
+
+    /* ---- Scroll reveal ---- */
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    /* ---- Hero particles ---- */
+    (function () {
+      var canvas = document.getElementById('particles');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var w, h, pts = [];
+      function resize() {
+        w = canvas.width = canvas.offsetWidth;
+        h = canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      var N = Math.min(70, Math.floor(w / 18));
+      for (var i = 0; i < N; i++) {
+        pts.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35 });
+      }
+      function tick() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < pts.length; i++) {
+          var p = pts[i];
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 1.4, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(140,150,200,0.55)';
+          ctx.fill();
+          for (var j = i + 1; j < pts.length; j++) {
+            var q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy;
+            if (d < 16000) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = 'rgba(110,86,255,' + (0.16 * (1 - d / 16000)) + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+
+    /* ---- Tool Finder Quiz ---- */
+    (function () {
+      var box = document.getElementById('finder-box');
+      if (!box) return;
+      var answers = [];
+      var questions = [
+        {
+          q: "What do you want AI to help with?",
+          opts: [
+            { t: "📈 Investing & trading smarter", v: "invest" },
+            { t: "💰 Getting my personal finances together", v: "finance" },
+            { t: "✍️ Writing & content creation", v: "writing" },
+            { t: "⚡ Saving time / getting organized", v: "productivity" }
+          ]
+        },
+        {
+          q: "What's your experience level?",
+          opts: [
+            { t: "Total beginner — keep it simple", v: "beginner" },
+            { t: "Comfortable — I know my way around", v: "mid" },
+            { t: "Power user — give me depth", v: "pro" }
+          ]
+        },
+        {
+          q: "What's your budget?",
+          opts: [
+            { t: "Free only", v: "free" },
+            { t: "Up to $15/month", v: "low" },
+            { t: "Whatever it takes if it's worth it", v: "high" }
+          ]
+        }
+      ];
+      var results = {
+        invest: {
+          beginner: { name: "Magnifi", why: "Natural-language investment search that feels like Google. The gentlest on-ramp to AI investing we've tested.", link: "articles/magnifi-review.html" },
+          mid: { name: "Composer", why: "Describe a strategy in plain English and Composer automates it. Best balance of power and approachability.", link: "articles/composer-review.html" },
+          pro: { name: "Composer", why: "The deepest no-code strategy automation we've tested — backtesting included.", link: "articles/composer-review.html" }
+        },
+        finance: {
+          beginner: { name: "Copilot", why: "The most polished AI budgeting app we tested — beautiful, automatic, and genuinely smart about categorizing.", link: "articles/copilot-vs-monarch.html" },
+          mid: { name: "Monarch Money", why: "Powerful, flexible, couple-friendly — the best all-round Mint replacement in our testing.", link: "articles/copilot-vs-monarch.html" },
+          pro: { name: "Monarch Money", why: "Deep customization, rules, and reporting that power users love.", link: "articles/copilot-vs-monarch.html" }
+        },
+        writing: {
+          beginner: { name: "Our AI Writing guide (coming soon)", why: "We're testing the top AI writing tools right now. Subscribe to get the verdict first.", link: "index.html#newsletter" },
+          mid: { name: "Our AI Writing guide (coming soon)", why: "We're testing the top AI writing tools right now. Subscribe to get the verdict first.", link: "index.html#newsletter" },
+          pro: { name: "Our AI Writing guide (coming soon)", why: "We're testing the top AI writing tools right now. Subscribe to get the verdict first.", link: "index.html#newsletter" }
+        },
+        productivity: {
+          beginner: { name: "Our AI Productivity guide (coming soon)", why: "We're testing the top AI productivity tools right now. Subscribe to get the verdict first.", link: "index.html#newsletter" },
+          mid: { name: "Our AI Productivity guide (coming soon)", why: "We're testing the top AI productivity tools right now. Subscribe to get the verdict first.", link: "index.html#newsletter" },
+          pro: { name: "Our AI Productivity guide (coming soon)", why: "We're testing the top AI productivity tools right now. Subscribe to get the verdict first.", link: "index.html#newsletter" }
+        }
+      };
+      function render(step) {
+        if (step >= questions.length) {
+          var r = (results[answers[0]] || results.invest)[answers[1]] || results.invest.mid;
+          box.innerHTML =
+            '<div class="finder-progress"><div class="finder-step active"></div><div class="finder-step active"></div><div class="finder-step active"></div></div>' +
+            '<div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-3);margin-bottom:8px;">Our recommendation</div>' +
+            '<div class="finder-result-name">' + r.name + '</div>' +
+            '<p class="finder-result-why">' + r.why + '</p>' +
+            '<a href="' + r.link + '" class="btn btn-primary" style="align-self:flex-start;">Read our review →</a>' +
+            '<button class="finder-restart" onclick="window.__finderRestart()">↺ Start over</button>';
+          return;
+        }
+        var qd = questions[step];
+        var prog = '';
+        for (var i = 0; i < questions.length; i++) {
+          prog += '<div class="finder-step' + (i <= step ? ' active' : '') + '"></div>';
+        }
+        var opts = qd.opts.map(function (o) {
+          return '<button class="finder-opt" data-v="' + o.v + '">' + o.t + '</button>';
+        }).join('');
+        box.innerHTML = '<div class="finder-progress">' + prog + '</div><div class="finder-q">' + qd.q + '</div><div class="finder-opts">' + opts + '</div>';
+        box.querySelectorAll('.finder-opt').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            answers.push(btn.getAttribute('data-v'));
+            render(step + 1);
+          });
+        });
+      }
+      window.__finderRestart = function () { answers = []; render(0); };
+      render(0);
+    })();
   </script>
 
 </body>

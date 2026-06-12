@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Reviews — ProspectAI</title>
+  <meta name="description" content="Browse every AI tool review on ProspectAI — investing, personal finance, writing, coding, marketing, and productivity." />
+  <link rel="canonical" href="https://gaviningit.github.io/prospectai/reviews.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Prospect<span class="logo-ai">AI</span></a>
+      <div class="nav-cats">
+        <a href="reviews.html?cat=investing" class="nav-cat">Investing</a>
+        <a href="reviews.html?cat=budgeting" class="nav-cat">Personal Finance</a>
+        <a href="reviews.html?cat=writing" class="nav-cat">Writing</a>
+        <a href="reviews.html?cat=coding" class="nav-cat">Coding</a>
+        <a href="reviews.html?cat=marketing" class="nav-cat">Marketing</a>
+        <a href="reviews.html?cat=productivity" class="nav-cat">Productivity</a>
+      </div>
+      <div class="nav-right">
+        <a href="index.html#newsletter" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Newsletter</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">The Library</span>
+          <h1 class="section-title">All Reviews</h1>
+        </div>
+      </div>
+
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-chip active" data-cat="all">All</button>
+        <button class="filter-chip" data-cat="investing">Investing</button>
+        <button class="filter-chip" data-cat="trading">Trading</button>
+        <button class="filter-chip" data-cat="budgeting">Personal Finance</button>
+        <button class="filter-chip" data-cat="advisors">For Advisors</button>
+        <button class="filter-chip" data-cat="writing">Writing</button>
+        <button class="filter-chip" data-cat="coding">Coding</button>
+        <button class="filter-chip" data-cat="marketing">Marketing</button>
+        <button class="filter-chip" data-cat="productivity">Productivity</button>
+      </div>
+
+      <div class="articles-grid" id="grid"></div>
+      <p id="empty" style="display:none;color:var(--text-3);text-align:center;padding:48px 0;">No reviews in this category yet — they're on the test bench now. <a href="index.html#newsletter" style="color:var(--mint);">Subscribe</a> to get them first.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="border:none;justify-content:center;">
+        <p class="footer-copy" style="text-align:center;">© 2026 ProspectAI. We may earn commissions from links on this site. This never influences our editorial opinions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var grid = document.getElementById('grid');
+    var empty = document.getElementById('empty');
+    var all = [];
+
+    function card(a) {
+      return '<a href="articles/' + a.slug + '.html" class="article-card">' +
+        '<div class="article-thumb thumb-' + a.category + '"></div>' +
+        '<div class="article-body">' +
+        '<span class="tag tag-' + a.category + '">' + a.categoryLabel + '</span>' +
+        '<h3 class="article-headline">' + a.title + '</h3>' +
+        '<p class="article-excerpt">' + a.excerpt + '</p>' +
+        '<div class="card-meta"><span>' + a.readTime + '</span></div>' +
+        '</div></a>';
+    }
+
+    function show(cat) {
+      var list = cat === 'all' ? all : all.filter(function (a) { return a.category === cat; });
+      grid.innerHTML = list.map(card).join('');
+      empty.style.display = list.length ? 'none' : 'block';
+      document.querySelectorAll('.filter-chip').forEach(function (c) {
+        c.classList.toggle('active', c.getAttribute('data-cat') === cat);
+      });
+    }
+
+    document.querySelectorAll('.filter-chip').forEach(function (c) {
+      c.addEventListener('click', function () { show(c.getAttribute('data-cat')); });
+    });
+
+    fetch('data/articles.json')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        all = d.articles.sort(function (a, b) { return b.date.localeCompare(a.date); });
+        var cat = new URLSearchParams(location.search).get('cat') || 'all';
+        var valid = ['all','investing','trading','budgeting','advisors','writing','coding','marketing','productivity'];
+        show(valid.indexOf(cat) >= 0 ? cat : 'all');
+      });
+  </script>
+
+</body>
+</html>

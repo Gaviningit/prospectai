@@ -1,0 +1,49 @@
+{
+  "articles": [
+    {
+      "slug": "best-ai-stock-analysis-tools",
+      "title": "7 Best AI Stock Analysis Tools — Ranked for Every Type of Investor",
+      "category": "trading",
+      "categoryLabel": "AI Investing",
+      "excerpt": "From beginner-friendly apps to pro-grade scanners, we ranked the best AI stock tools available right now.",
+      "readTime": "8 min read",
+      "date": "2025-06-01"
+    },
+    {
+      "slug": "magnifi-review",
+      "title": "Magnifi Review 2025 — The AI Investment Assistant That Searches Like Google",
+      "category": "investing",
+      "categoryLabel": "AI Investing",
+      "excerpt": "Magnifi lets you search for investments using plain English. We tested it for 30 days with real money.",
+      "readTime": "7 min read",
+      "date": "2025-06-01"
+    },
+    {
+      "slug": "ai-tools-for-financial-advisors",
+      "title": "5 AI Tools Every Financial Advisor Should Be Using in 2025",
+      "category": "advisors",
+      "categoryLabel": "For Advisors",
+      "excerpt": "The advisors pulling ahead of the pack have one thing in common — they've automated the grunt work with AI.",
+      "readTime": "6 min read",
+      "date": "2025-06-01"
+    },
+    {
+      "slug": "copilot-vs-monarch",
+      "title": "Copilot vs Monarch Money — The Best Mint Replacement in 2025",
+      "category": "budgeting",
+      "categoryLabel": "Personal Finance",
+      "excerpt": "Both use AI to track your spending automatically. But they serve very different types of users.",
+      "readTime": "5 min read",
+      "date": "2025-05-15"
+    },
+    {
+      "slug": "composer-review",
+      "title": "Composer Review — Build Automated Trading Strategies Without Code",
+      "category": "trading",
+      "categoryLabel": "AI Investing",
+      "excerpt": "Composer lets you describe a trading strategy in plain English and it builds it for you. We ran it live for a month.",
+      "readTime": "6 min read",
+      "date": "2025-05-15"
+    }
+  ]
+}

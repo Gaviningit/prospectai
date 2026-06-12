@@ -1,6 +1,15 @@
 {
   "articles": [
     {
+      "slug": "monarch-money-review-best-personal-finance-app",
+      "title": "Monarch Money Review — The Best Personal Finance App Nobody Talks About",
+      "category": "budgeting",
+      "categoryLabel": "Personal Finance",
+      "excerpt": "Monarch Money does almost everything Mint used to do — and several things Mint never could — making it the most complete personal finance app available right now.",
+      "readTime": "7 min read",
+      "date": "2026-06-12"
+    },
+    {
       "slug": "best-ai-stock-analysis-tools",
       "title": "7 Best AI Stock Analysis Tools — Ranked for Every Type of Investor",
       "category": "trading",

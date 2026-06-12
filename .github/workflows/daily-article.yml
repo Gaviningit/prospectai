@@ -19,6 +19,16 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Skip if an article is already awaiting approval
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          OPEN=$(gh pr list --state open --json headRefName --jq '[.[] | select(.headRefName | startswith("article/"))] | length')
+          if [ "$OPEN" -gt 0 ]; then
+            echo "An article PR is already open — skipping today's generation."
+            exit 1
+          fi
+
       - name: Generate article with Claude
         id: gen
         env:

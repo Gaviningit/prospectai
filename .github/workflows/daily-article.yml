@@ -41,19 +41,10 @@ jobs:
           git add -A
           git commit -m "New article: ${TITLE}"
           git push origin "$BRANCH"
+          BODY=$(printf '**Category:** %s\n\n**Excerpt:** %s\n\n**Preview the article file:** `articles/%s.html`\n\n---\n✅ **Merge this PR to publish** the article to the live site.\n❌ **Close this PR to reject** it (the topic will need to be re-queued manually).\n\n_Generated automatically by the ProspectAI article pipeline._' "$CATEGORY" "$EXCERPT" "$SLUG")
           PR_URL=$(gh pr create \
             --title "📝 ${TITLE}" \
-            --body "**Category:** ${CATEGORY}
-
-**Excerpt:** ${EXCERPT}
-
-**Preview the article file:** \`articles/${SLUG}.html\`
-
----
-✅ **Merge this PR to publish** the article to the live site.
-❌ **Close this PR to reject** it (the topic will need to be re-queued manually).
-
-_Generated automatically by the ProspectAI article pipeline._" \
+            --body "$BODY" \
             --base main \
             --head "$BRANCH")
           echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"

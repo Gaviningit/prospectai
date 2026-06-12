@@ -1,0 +1,43 @@
+name: Publish Notification
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  notify:
+    if: startsWith(github.head_ref, 'article/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Discord of outcome
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          MERGED: ${{ github.event.pull_request.merged }}
+          TITLE: ${{ github.event.pull_request.title }}
+          SLUG: ${{ github.head_ref }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, urllib.request
+          merged = os.environ["MERGED"] == "true"
+          slug = os.environ["SLUG"].replace("article/", "")
+          title = os.environ["TITLE"].replace("📝 ", "")
+          if merged:
+              embed = {
+                  "title": "✅ Article Published",
+                  "color": 58784,
+                  "description": f"**{title}** is now live:\nhttps://gaviningit.github.io/prospectai/articles/{slug}.html\n\n_GitHub Pages can take 1-2 minutes to update._",
+              }
+          else:
+              embed = {
+                  "title": "❌ Article Rejected",
+                  "color": 15158332,
+                  "description": f"**{title}** was rejected and will not be published.",
+              }
+          payload = {"username": "ProspectAI Bot", "embeds": [embed]}
+          req = urllib.request.Request(
+              os.environ["WEBHOOK"],
+              data=json.dumps(payload).encode(),
+              headers={"Content-Type": "application/json"},
+          )
+          urllib.request.urlopen(req)
+          EOF

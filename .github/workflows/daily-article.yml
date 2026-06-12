@@ -1,0 +1,93 @@
+name: Daily Article
+
+on:
+  schedule:
+    - cron: "0 11 * * *" # 7:00 AM ET every morning
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate article with Claude
+        id: gen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-article.mjs
+
+      - name: Create branch and pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.gen.outputs.slug }}
+          TITLE: ${{ steps.gen.outputs.title }}
+          EXCERPT: ${{ steps.gen.outputs.excerpt }}
+          CATEGORY: ${{ steps.gen.outputs.category }}
+        run: |
+          BRANCH="article/${SLUG}"
+          git config user.name "prospectai-bot"
+          git config user.email "actions@github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "New article: ${TITLE}"
+          git push origin "$BRANCH"
+          PR_URL=$(gh pr create \
+            --title "📝 ${TITLE}" \
+            --body "**Category:** ${CATEGORY}
+
+**Excerpt:** ${EXCERPT}
+
+**Preview the article file:** \`articles/${SLUG}.html\`
+
+---
+✅ **Merge this PR to publish** the article to the live site.
+❌ **Close this PR to reject** it (the topic will need to be re-queued manually).
+
+_Generated automatically by the ProspectAI article pipeline._" \
+            --base main \
+            --head "$BRANCH")
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Notify Discord for approval
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TITLE: ${{ steps.gen.outputs.title }}
+          EXCERPT: ${{ steps.gen.outputs.excerpt }}
+          CATEGORY: ${{ steps.gen.outputs.category }}
+          READ_TIME: ${{ steps.gen.outputs.read_time }}
+          PR_URL: ${{ steps.pr.outputs.pr_url }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, urllib.request
+          payload = {
+              "username": "ProspectAI Bot",
+              "embeds": [{
+                  "title": "📝 New Article Ready for Review",
+                  "color": 5844223,
+                  "fields": [
+                      {"name": "Title", "value": os.environ["TITLE"], "inline": False},
+                      {"name": "Category", "value": os.environ["CATEGORY"], "inline": True},
+                      {"name": "Read Time", "value": os.environ["READ_TIME"], "inline": True},
+                      {"name": "Excerpt", "value": os.environ["EXCERPT"], "inline": False},
+                      {"name": "How to approve", "value": "✅ Open the link below and tap **Merge pull request** to publish\n❌ Or **Close pull request** to reject\n\n" + os.environ["PR_URL"], "inline": False},
+                  ],
+                  "footer": {"text": "ProspectAI Article Pipeline"},
+              }],
+          }
+          req = urllib.request.Request(
+              os.environ["WEBHOOK"],
+              data=json.dumps(payload).encode(),
+              headers={"Content-Type": "application/json"},
+          )
+          urllib.request.urlopen(req)
+          EOF
